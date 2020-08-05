@@ -7,3 +7,4 @@ read -p "Enter the third number:" c
 
 echo $(($a+$b*$c))
 echo $(($a*$b+$c))
+awk "BEGIN {print $a + `awk "BEGIN {print $a/$b}"`}"
