@@ -5,7 +5,9 @@ read -p "Enter the first number:" a
 read -p "Enter the second number:" b
 read -p "Enter the third number:" c
 
-echo $(($a+$b*$c))
-echo $(($a*$b+$c))
-awk "BEGIN {print $a + `awk "BEGIN {print $a/$b}"`}"
-echo $(($a%$b+$c))
+declare -A Computations
+
+Computation[result1]=$(($a+$b*$c))
+Computation[result2]=$(($a*$b+$c))
+Computation[result3]=$(($c+$a/$b))
+Computation[result4]=$(($a%$b+$c))
