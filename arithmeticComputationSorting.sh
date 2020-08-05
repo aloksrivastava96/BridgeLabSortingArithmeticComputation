@@ -17,7 +17,7 @@ function arraySort() {
         do
                 for (( newcounter=$sortcounter+1; newcounter<LENGTH; newcounter++ ))
                 do
-                        if (( ${arrayResult[sortcounter]}<${arrayResult[newcounter]} ))
+                        if (( ${arrayResult[sortcounter]}>${arrayResult[newcounter]} ))
                         then
                                 element=${arrayResult[sortcounter]}
                                 arrayResult[sortcounter]=${arrayResult[newcounter]}
@@ -33,7 +33,7 @@ for value in `echo ${Computations[@]}`
 do
 	arrayResult[(( counter++ ))]=$value
 done
-echo "Results in descending order are:"
+echo "Results in ascending order are:"
 LENGTH=$((counter++))
 arraySort $arrayResult $LENGTH
 
